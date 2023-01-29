@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skribbl-Free Multiplayer drwaing</title>
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+    <!-- link style.css file in html page  -->
+
+    <link rel="stylesheet" href="./../css/style.css">
+
+
+    <!-- cdn link for fa icons  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- header section starts here  -->
+    <header>
+        <div class="play_logo">
+            <img src="https://skribbl.io/img/logo.gif" alt="">
+        </div>
+        <div class="bar">
+            <div class="clock">
+                <img src="https://skribbl.io/img/clock.gif" alt="" srcset="">
+                <p class="timer"></p>
+                <p>Round <span class="current_round">1</span> of 3</p>
+            </div>
+            <div class="guess_word">
+                <p>Guess this</p>
+                <p class="fill_in">_ _ _ _ _ _ _ <sup class="total_char">7</sup></p>
+
+            </div>
+            <img src="https://skribbl.io/img/settings.gif" alt="" srcset="">
+        </div>
+    </header>
+
+    <!-- header section ends here  -->
+
+    <!-- play area section starts here  -->
+
+    <main class="play_area">
+
+        <div class="player_list">
+            <div class="player">
+                <p>#1</p>
+                <div>
+                    <p class="player_name first_player">Player1</p>
+                    <p class="points">0 points</p>
+                </div>
+                <img src="./../images/pencil.png" alt="" class="pencil pencil1">
+                <img src="./../images/animated1.gif" alt="" class="animated_character">
+            </div>
+            <div class="player">
+                <p>#2</p>
+                <div>
+                    <p class="player_name">Player2</p>
+                    <p class="points">0 points</p>
+                </div>
+                <img src="./../images/pencil.png" alt="" class="pencil pencil2">
+                <img src="./../images/animated1.gif" alt="" class="animated_character">
+            </div>
+            <div class="player">
+                <p>#3</p>
+                <div>
+                    <p class="player_name">Player3</p>
+                    <p class="points">0 points</p>
+                </div>
+                <img src="./../images/pencil.png" alt="" class="pencil pencil3">
+                <img src="./../images/animated1.gif" alt="" class="animated_character">
+            </div>
+            <div class="player">
+                <p>#4</p>
+                <div>
+                    <p class="player_name">Player4</p>
+                    <p class="points">0 points</p>
+                </div>
+                <img src="./../images/pencil.png" alt="" class="pencil pencil4">
+                <img src="./../images/animated1.gif" alt="" class="animated_character">
+            </div>
+            <div class="player">
+                <p>#5</p>
+                <div>
+                    <p class="player_name">Player5</p>
+                    <p class="points">0 points</p>
+                </div>
+                <img src="./../images/pencil.png" alt="" class="pencil pencil5">
+                <img src="./../images/animated1.gif" alt="" class="animated_character">
+            </div>
+        </div>
+        <section class="drawing_area">
+
+            <section class="drawing_box">
+
+                <div id="toolbar">
+                    <h1>Draw</h1>
+                    <label for="stroke">Color</label>
+                    <input id="stroke" name='stroke' type="color">
+                    <label for="lineWidth">Line Width</label>
+                    <input id="lineWidth" name='lineWidth' type="number" value="5">
+                    <button id="clear">Clear</button>
+                </div>
+                <div class="like_dislike">
+                    <img src="https://skribbl.io/img/thumbsup.gif" alt="" class="thumbs_up">
+                    <img src="https://skribbl.io/img/thumbsdown.gif" alt="" class="thumbs_down">
+                </div>
+                <div class="drawing-board">
+                    <canvas id="drawing-board"></canvas>
+
+                </div>
+
+            </section>
+            <section class="word_display">
+                <div class="word_content">
+                  <h2> <span class="player_to_choose_word">Player 1</span> Choose a Word</h2>
+
+                  <h3 class="arr_of_words"></h3>
+                </div>
+
+            </section>
+            <section class="result_display">
+                <div class="result_content">
+                    <h3>The word was <b class="real_word">Hello</b></h3>
+                    <p>The time is Up!</p>
+                    <div class="score">
+                        <div class="player_name_for_score player_1_name_for_score">Taher</div>
+                        <div class="score_number player_1_score";">0</div>
+                    </div>
+                    <div class="score">
+                        <div class="player_name_for_score player_2_score">Player 2</div>
+                        <div class="score_number" style="color:red;">0</div>
+                    </div>
+                    <div class="score">
+                        <div class="player_name_for_score player_3_score">Player 3</div>
+                        <div class="score_number" style="color:red;">0</div>
+                    </div>
+                    <div class="score">
+                        <div class="player_name_for_score player_4_score">Player 4</div>
+                        <div class="score_number" style="color:red;">0</div>
+                    </div>
+                    <div class="score">
+                        <div class="player_name_for_score player_5_score">Player 5</div>
+                        <div class="score_number" style="color:red;">0</div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="winner_display">
+                <div class="winner_content">
+                  <h2> <span class="player_winner">Player 1</span> is Winner🎉🎉🎉</h2>
+                </div>
+
+            </section>
+        </section>
+        <div class="word_typing">
+            <div class="show_word_area">
+                <div class="written_words">
+                    <p class="written_by">player2:</p><span class="word_line">skate</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">player2:</p><span class="word_line">drawing</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">player1:</p><span class="word_line">clear</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">Player3:</p><span class="word_line">stories</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">player4:</p><span class="word_line">images</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">player2:</p><span class="word_line">noidea</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">Player3:</p><span class="word_line">instagram</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">player4:</p><span class="word_line">facebook</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">Player5:</p><span class="word_line">Speed</span>
+                </div>
+                <div class="written_words">
+                    <p class="written_by">player5:</p><span class="word_line">goodbye</span>
+                </div>
+
+            </div>
+
+            <form action="" id="word_input_form">
+                <input type="text" id="word_input" placeholder="type your guess here">
+            </form>
+            
+        </div>
+
+    </main>
+
+    <!-- play area section ends here  -->
+
+    <script src="./../js/play.js"></script>
+    <script src="./../js/draw.js"></script>
+</body>
+
+</html>

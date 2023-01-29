@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skribbl-Free Multiplayer drwaing</title>
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+    <!-- link style.css file in html page  -->
+
+    <link rel="stylesheet" href="./../css/style.css">
+
+
+    <!-- cdn link for fa icons  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- header section starts here  -->
+    <header>
+        <div class="play_logo">
+            <img src="https://skribbl.io/img/logo.gif" alt="">
+        </div>
+        <div class="bar">
+            <div class="clock">
+                <img src="https://skribbl.io/img/clock.gif" alt="" srcset="">
+                <p class="room_timer">0</p>
+                <p>Round <span class="current_round">1</span> of 3</p>
+            </div>
+            <div class="guess_word">
+                <p>Waiting</p>
+            </div>
+            <img src="https://skribbl.io/img/settings.gif" alt="" srcset="">
+        </div>
+    </header>
+
+    <!-- header section ends here  -->
+
+    <!-- play area section starts here  -->
+
+    <main class="play_area">
+
+        <section class="player_list">
+            <div class="player">
+                <p>#1</p>
+                <div>
+                    <p class="player_name first_player">Taher</p>
+                    <p class="points">0 points</p>
+                </div>
+                <img src="./images/animated1.gif" alt="" class="animated_character">
+            </div>
+
+        </section>
+        <section class="form_area">
+           <div class="form_fill">
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_1.gif" alt="" srcset="">
+              <p>Players</p>
+            </div>
+            <div>
+             <select name=""id="select_options">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+             </select>
+            </div>
+        </div>
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_0.gif" alt="" srcset="">
+              <p>Language</p>
+            </div>
+            <div>
+             <select name=""id="select_options">
+                <option value="English">English</option>
+                <option value="German">German</option>
+                <option value="Bulgarian">Bulgarian</option>
+                <option value="Korean">Korean</option>
+             </select>
+            </div>
+        </div>
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_2.gif" alt="" srcset="">
+              <p>DrawTime</p>
+            </div>
+            <div>
+             <select name=""id="select_options">
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+             </select>
+            </div>
+        </div>
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_3.gif" alt="" srcset="">
+              <p>Rounds</p>
+            </div>
+            <div>
+             <select name="" id="select_options">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+             </select>
+            </div>
+        </div>
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_6.gif" alt="" srcset="">
+              <p>Word Mode</p>
+            </div>
+            <div>
+             <select name="" id="select_options">
+                <option value="normal">Normal</option>
+                <option value="hidden">Hidden</option>
+             </select>
+            </div>
+        </div>
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_5.gif" alt="" srcset="">
+              <p>Word Count</p>
+            </div>
+            <div >
+             <select name="" id="select_options">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+             </select>
+            </div>
+        </div>
+            <div class="option_list">
+            <div class="option_content">
+                <img src="https://skribbl.io/img/setting_4.gif" alt="" srcset="">
+              <p>Hints</p>
+            </div>
+            <div>
+             <select name="" id="select_options">
+                <option value="1">1</option>
+                <option value="2">2</option>
+             </select>
+            </div>
+        </div>
+           </div>
+           <div>
+            <textarea name="" id="create_word" cols="100" rows="10" placeholder="Minimum of five words, 1-7 character per word.Seprated By , (comma)"></textarea>
+           </div>
+           <button class="start_btn">Create Words!</button>
+
+        </section>
+        <section class="word_typing">
+            <div class="show_word_area">
+                <div class="written_words">
+                    <p class="written_by"> <span class="room_owner">Taher</span> is now the room owner</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="link">
+        <h3>Invite your friends!</h3>
+        <div class="copy_link">
+            <p class="hover_on_me">Hover on me to see the link</p>
+            <p class="hover_link">https://skribbl.io/?caCIoMwG</p>
+            <button class="copy_button" onclick="copyFunction()">Copy</button>
+        </div>
+       
+      </section>
+
+
+
+    <!-- play area section ends here  -->
+<script src="./../js/room.js"></script>
+</body>
+
+</html>
