@@ -38,12 +38,13 @@ playerToChooseWord.innerText=contestantName;
 player1NameForScore.innerText = contestantName;
 firstPlayer.innerText=contestantName;
 playerWinner.innerText=contestantName;
-player1Score.innerText="";
+player1Score.innerText=0;
 currentRound.innerText=1;
 winnerDisplay.style.display="none";
 wordDisplay.style.display="block";
-sidePoints.innerText=0;
 playerBox.classList.remove('green');
+thumbsUp.style.display="block";
+thumbsDown.style.display="block";
 
 }
 
@@ -138,6 +139,9 @@ timer.innerText=time--;
 if(time<9){
    timer.style.left="8%";
 }
+
+
+
  if(time<0){
    clearInterval(timeCountDown);
    resultDisplay.style.display = "block";
@@ -156,6 +160,8 @@ if(time<9){
 
      fillIn.innerHTML+=totalChar.innerText;
      wordDisplay.style.display="block";
+     thumbsUp.style.display="block";
+     thumbsDown.style.display="block";
 
      let round=Number(currentRound.innerText);
      round++;
