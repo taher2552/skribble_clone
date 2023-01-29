@@ -17,6 +17,9 @@ const playerToChooseWord = document.querySelector('.player_to_choose_word');
 const player1NameForScore = document.querySelector('.player_1_name_for_score');
 const winnerDisplay = document.querySelector('.winner_display');
 const playerWinner = document.querySelector('.player_winner');
+const sidePoints = document.querySelector('.side_points');
+const playerPointsDisplay = document.querySelector('.player_points_display');
+const playerBox = document.querySelector('.player')
 let player1Score = document.querySelector('.player_1_score');
 let currentRound = document.querySelector('.current_round');
 let contestantName = localStorage.getItem('player1') || "player1"
@@ -39,6 +42,8 @@ player1Score.innerText="";
 currentRound.innerText=1;
 winnerDisplay.style.display="none";
 wordDisplay.style.display="block";
+sidePoints.innerText=0;
+playerBox.classList.remove('green');
 
 }
 
@@ -79,12 +84,15 @@ function wordInputSubmit(e){
     let scr = Number(player1Score.innerText);
    scr+=15;
    player1Score.innerText="";
+   sidePoints.innerText="";
     if(scr>0){
       player1Score.classList.add('score_green')
     }else{
       player1Score.classList.remove('score_green')
     }
     player1Score.innerText+=scr;
+    sidePoints.innerText+=scr;
+    playerBox.classList.add('green');
 
     greenClass="green";
   }else{
@@ -118,6 +126,7 @@ function arrayWordFunction(e){
 totalChar.innerText=word.length;
 fillIn.innerHTML+=totalChar.innerText;
 realWord.innerText = word;
+playerBox.classList.remove('green');
 
 
 let time=5;
