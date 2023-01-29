@@ -96,6 +96,8 @@ function wordInputSubmit(e){
     playerBox.classList.add('green');
 
     greenClass="green";
+
+    wordForm.style.display="none";
   }else{
     wordInputValue=wordInput.value;
     greenClass=""
@@ -118,6 +120,7 @@ function arrayWordFunction(e){
   wordDisplay.style.display="none";
   guessWord.style.display="block";
   wordForm.style.display="block";
+  timer.style.left="5%";
   fillIn.innerText=""; 
 
   for(let i=0; i<word.length;i++){
@@ -146,6 +149,7 @@ if(time<9){
    clearInterval(timeCountDown);
    resultDisplay.style.display = "block";
    fillIn.innerHTML=word;
+  
 
 
    setTimeout(()=>{
