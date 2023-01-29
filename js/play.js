@@ -129,7 +129,7 @@ realWord.innerText = word;
 playerBox.classList.remove('green');
 
 
-let time=5;
+let time=30;
 let timeCountDown = setInterval(()=>{
 timer.innerText=time--;
 
