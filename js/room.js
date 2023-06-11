@@ -6,13 +6,15 @@ const roomOwner = document.querySelector('.room_owner');
 const createWord = document.querySelector('#create_word');
 const startButton = document.querySelector('.start_btn');
 
+
 function copyFunction(){
     textToCopy=hoverLink.innerText;
     navigator.clipboard.writeText(textToCopy);
 }
 
 function startFunction(){
-    let wordArray = createWord.value.split(',');
+    wordArray = createWord.value.split(',') ;
+    
     alert("words created successfully")
     localStorage.setItem("wordList", JSON.stringify(wordArray));
 }

@@ -13,11 +13,17 @@ const instrctImg2 = document.querySelector('.instruct_img2');
 const instrctImg3 = document.querySelector('.instruct_img3');
 const instrctImg4 = document.querySelector('.instruct_img4');
 const instrctImg5 = document.querySelector('.instruct_img5');
+let wordArray=['tree', 'ball', 'water', 'cricket','bat'];
 
 function playFunction(){
  
     localStorage.setItem("player1", player1.value);
     player1.value="";
+
+    let wordsList = JSON.parse(localStorage.getItem('wordList')) ?? wordArray;
+     
+    localStorage.setItem("wordList", JSON.stringify(wordsList));
+
     window.location.href="html/play.html";
 
 }
@@ -102,7 +108,9 @@ circle1.addEventListener('click', circleFunction1)
 circle2.addEventListener('click', circleFunction2)
 circle3.addEventListener('click', circleFunction3)
 circle4.addEventListener('click', circleFunction4)
-circle5.addEventListener('click', circleFunction5)
+circle5.addEventListener('click', circleFunction5);
+
+
 
 // first page js ends here
 
